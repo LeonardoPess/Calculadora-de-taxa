@@ -26,5 +26,7 @@
   <img src="https://github.com/LeonardoPess/Calculadora-de-taxa/blob/main/Screenshot_1.png">
 </p>
 
+<p align="center">Um projeto onde consegui colocar várias lógicas e aprendizados em prática!</p>
+
 ## Demo
 https://leonardopess.github.io/Calculadora-de-taxa/
