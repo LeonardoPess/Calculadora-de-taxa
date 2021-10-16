@@ -1,0 +1,32 @@
+/*.main-taxa*/ * {
+  margin: 0;
+	padding: 0;
+  box-sizing: border-box;
+	line-height: initial;
+  font-family: Roboto;
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 2%;
+}
+
+.taxa {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 65px;
+  padding-bottom: 65px;
+
+  background-color: rgba(247,250,253,1);
+}
+
+.hide {
+  display: none;
+}
+
+select,
+input[type="radio"] {
+   cursor: pointer;
+}

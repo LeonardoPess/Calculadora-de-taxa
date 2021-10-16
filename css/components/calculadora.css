@@ -1,0 +1,227 @@
+.conversor-wrapper {
+  max-width: 680px;
+
+  padding:  0 2%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin:  0 auto;
+
+  background: white;
+  border-radius: .8rem;
+  box-shadow: 0 0 transparent,0 0 transparent,0 0 transparent, 0 0 transparent, 2px 8px 24px rgba(103,116,129,0.15);
+}
+
+@media (max-width: 48rem) {
+  .conversor-wrapper {
+    flex-direction:  column;
+  }
+}
+
+.conversor-wrapper .conversor-calculo {
+  border-right:  1px solid rgb(231, 234, 236);
+}
+
+.conversor-wrapper .conversor-calculo,
+.conversor-wrapper .conversor-resultado {
+  width: 50%;
+  padding: 40px 20px;
+}
+
+@media (max-width: 48rem) {
+  .conversor-wrapper .conversor-calculo,
+  .conversor-wrapper .conversor-resultado {
+    width: 100%;
+
+    border: 0;
+  }
+
+  .conversor-wrapper .conversor-calculo {
+    border-bottom:  1px solid rgb(231, 234, 236);
+  }
+}
+
+.conversor-wrapper p {
+  margin-bottom: 8px;
+
+  font-size: .8rem;
+  font-weight: 500;
+  line-height: 2.4rem;
+}
+
+.conversor-wrapper .planos,
+.conversor-wrapper .tipo-venda {
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+  margin-bottom:  1rem;
+
+  cursor: pointer;
+}
+
+.conversor-wrapper .planos span,
+.conversor-wrapper .tipo-venda span {
+  width: 100%;
+
+  padding: .8rem 0;
+
+  text-align: center;
+  font-weight: 500;
+  line-height: 2.4rem;
+  font-size: .8rem;
+  border: 1px solid rgba(0,173,12,1);;
+}
+
+.conversor-wrapper span.selected {
+  background:  rgba(0,173,12,1);
+  color:  white;
+}
+
+.conversor-wrapper .planos span:first-of-type,
+.conversor-wrapper .tipo-venda span:first-of-type {
+  border-top-left-radius: .2rem;
+  border-bottom-left-radius: .2rem;
+}
+
+.conversor-wrapper .planos span:last-of-type,
+.conversor-wrapper .tipo-venda span:last-of-type {
+  border-top-right-radius: .2rem;
+  border-bottom-right-radius: .2rem;
+}
+
+.conversor-wrapper .select-fs{
+  max-width: 90%;
+}
+
+.conversor-wrapper .valor,
+.conversor-wrapper .select {
+  width: 100%;
+
+  padding: 12px;
+  margin-bottom:  1rem;
+
+  color: rgba(32,37,42,1);
+  line-height: 2.4rem;
+  font-size: .8rem;
+  border: 1px solid rgba(188,200,214,1);
+  border-radius:  .2rem;
+}
+
+.conversor-wrapper .parcelamento-bandeira {
+  width: 100%;
+  display: flex;
+}
+
+.conversor-wrapper .parcelamento,
+ .conversor-wrapper .bandeira {
+  width: 100%;
+}
+
+.conversor-wrapper .recebimento {
+  width: 100%;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.conversor-wrapper .recebimento > * {
+  display: flex;
+}
+
+.conversor-wrapper .recebimento > *.hide,
+.conversor-wrapper .recebimento > *.hide{
+  display: none;
+}
+
+.conversor-wrapper .recebimento label {
+  padding-left: 8px;
+  display: flex;
+  align-items: center;
+
+  font-size: .8rem;
+}
+
+.conversor-wrapper .conversor-resultado {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.conversor-wrapper .resultado {
+  width: 100%;
+
+  margin-bottom: 1rem;
+  padding: 1.2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  border-radius: .8rem;
+  box-shadow: 0.2rem 0.8rem 2.4rem rgb(103 116 129 / 15%);
+  text-align: center;
+  background-color: rgba(0,173,12,1);
+}
+
+.conversor-wrapper .resultado p {
+  color: rgba(255,255,255,1);
+}
+
+.conversor-wrapper .resultado strong {
+  color: rgba(255,255,255,1);
+  font-size: 1.8rem;
+  line-height: 4rem;
+  font-family: gothamrounded;
+}
+
+.conversor-wrapper .resultado-info {
+  width: 100%;
+
+
+  display: flex;
+  margin-bottom:  1rem;
+}
+
+.conversor-wrapper .resultado-info .resultado-info-taxa,
+.conversor-wrapper .resultado-info .resultado-info-tarifa,
+.conversor-wrapper .chamada {
+  width: 50%;
+
+  padding: 1.2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  border-radius: .8rem;
+  box-shadow: 0.2rem 0.8rem 2.4rem rgb(103 116 129 / 15%);
+}
+
+.conversor-wrapper .resultado-info .resultado-info-taxa{
+  margin-right: 8px;
+}
+
+.conversor-wrapper .resultado-info .resultado-info-tarifa {
+  margin-left: 8px;
+}
+
+.conversor-wrapper .chamada {
+  width: 100%;
+
+  display: flex;
+  justify-content:  center;
+  align-items: center;
+  flex-direction: row;
+}
+
+.conversor-wrapper .chamada {
+  font-size: 1.6rem;
+  line-height: 2.4rem;
+}
+
+.conversor-wrapper .chamada svg {
+  margin-right: 8px;
+}

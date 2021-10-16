@@ -1,0 +1,20 @@
+::placeholder {
+  color: black;
+  opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+ color: black;
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+ color: black;
+}
+
+input:focus {
+  outline-color: rgba(0,173,12,1);
+ }
+
+ .recebimento label {
+  cursor: pointer;
+ }

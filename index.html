@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/styles.css">
+  <title>Cálculo de taxa</title>
+</head>
+<body>
+
+  <main class="main-taxa">
+    <section class="taxa">
+      <div class="container">
+        <h2 class="title">Calcule quanto você receberá em suas vendas</h2>
+
+        <div class="conversor-wrapper">
+          <div class="conversor-calculo" >
+            <p>Escolha seu plano:</p>
+              <div class="planos">
+                  <span class="selected" data-plano>GigaTon</span>
+                  <span data-plano>MegaTon</span>
+                  <span data-plano>Ton Básico</span>
+              </div>
+            <p>Tipo de venda:</p>
+              <div class="tipo-venda">
+                <span class="selected" >Crédito</span>
+                <span id="debito">Débito</span>
+              </div>
+            <p>Valor da venda:</p>
+              <input 
+                id="myInput" inputmode="numeric" value="R$ 5.000,00" placeholder="R$ 0,00" 
+                class="valor" maxlength="14" data-valor
+              > 
+            <div class="parcelamento-bandeira">
+              <div class="parcelamento">
+                <p>Parcelamento:</p>
+                  <select name="parcelamento" id="parcelamento" class="select select-fs">
+                    <option value="1">À vista</option>
+                    <option value="2">2x</option>
+                    <option value="3">3x</option>
+                    <option value="4">4x</option>
+                    <option value="5">5x</option>
+                    <option value="6">6x</option>
+                    <option value="7">7x</option>
+                    <option value="8">8x</option>
+                    <option value="9">9x</option>
+                    <option value="10">10x</option>
+                    <option value="11">11x</option>
+                    <option value="12">12x</option>
+                  </select>
+              </div>
+              <div class="bandeira">
+                <p>Bandeira:</p>
+                  <select name="bandeira" id="bandeira" class="select">
+                    <option value="1">Mastercard</option>
+                    <option value="1">Visa</option>
+                    <option value="2">Elo</option>
+                    <option value="2">Amex</option>
+                    <option value="2">Hipercard</option>
+                  </select>
+              </div>
+            </div>
+            <p>Recebimento:</p>
+              <div class="recebimento">
+                <div>
+                  <input type="radio" id="oneDayOption" name="recebimento" value="1day"
+                  checked>
+                  <label for="oneDayOption">1 dia útil</label>
+                </div>
+                <div id="twoDayOptionBox">
+                  <input type="radio" id="twoDayOption" name="recebimento" value="14day">
+                  <label for="twoDayOption">14 dias</label>
+                </div>
+                <div id="threeDayOptionBox">
+                  <input type="radio" id="threeDayOption" name="recebimento" value="30day">
+                  <label for="threeDayOption">30 dias</label>
+                </div>
+              </div>
+          </div>
+
+          <div class="conversor-resultado" >
+            <div class="resultado">
+              <p>Você recebe:</p>
+              <strong data-recebe></strong>
+            </div>
+            <div class="resultado-info">
+              <div class="resultado-info-taxa">
+                <p>Taxa:</p>
+                <strong data-taxa></strong>
+              </div>
+              <div class="resultado-info-tarifa">
+                <p>Tarifa:</p>
+                <strong data-tarifa>R$ 0,00</strong>
+              </div>
+            </div>
+            <div class="chamada">
+              <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(#clip0)"><path d="M11.5 12H15.5" stroke="#00AD00" stroke-width="2" stroke-miterlimit="10" stroke-linecap="square"></path><path d="M13.5 5C14.6046 5 15.5 4.10457 15.5 3C15.5 1.89543 14.6046 1 13.5 1C12.3954 1 11.5 1.89543 11.5 3C11.5 4.10457 12.3954 5 13.5 5Z" stroke="#00AD00" stroke-width="2" stroke-miterlimit="10" stroke-linecap="square"></path><path d="M10.5 21V23" stroke="#00AD00" stroke-width="2" stroke-miterlimit="10" stroke-linecap="square"></path><path d="M16.5 21V23" stroke="#00AD00" stroke-width="2" stroke-miterlimit="10" stroke-linecap="square"></path><path d="M17 8.00009H9.5C8.25 5.04209 5.5 6.00009 5.5 6.00009L6.4 9.08909C5.339 9.79709 4.503 10.8101 4.005 12.0001H1.5V17.0001H4C4.98 19.3491 7.297 21.0001 10 21.0001H17C20.59 21.0001 23.5 18.0901 23.5 14.5001C23.5 10.9101 20.59 8.00009 17 8.00009Z" stroke="#00AD00" stroke-width="2" stroke-miterlimit="10" stroke-linecap="square"></path></g><defs><clipPath id="clip0"><rect width="24" height="24" fill="white" transform="translate(0.5)"></rect></clipPath></defs></svg>
+              <p>Economia de até <strong data-economia>R$ 0,00</strong> em relação aos concorrentes</p>
+            </div>
+          </div>
+          <div></div>
+        </div><!--conversor-wrapper-->
+
+      </div><!--container-->
+    </section>
+  </main>
+
+<script src="https://github.com/codermarcos/simple-mask-money/releases/download/v3.0.0/simple-mask-money.js"></script> 
+<script>
+  const input = document.querySelector('#myInput');
+
+  // configuration
+  const args = {
+    afterFormat(e) {},
+    allowNegative: false,
+    beforeFormat(e) {},
+    negativeSignAfter: false,
+    prefix: 'R$ ',
+    suffix: '',
+    fixed: true,
+    fractionDigits: 2,
+    decimalSeparator: ',',
+    thousandsSeparator: '.',
+    cursor: 'end'
+  };
+
+  // select the element
+  function startMaskMoney() {
+    const inputMask = SimpleMaskMoney.setMask('#myInput', args);
+    inputMask.formatToNumber();
+  }
+
+  input.addEventListener('click', startMaskMoney);
+
+  // This method return value of your input in format number to save in your database
+
+</script> 
+<script src="./dist/main.js"></script>
+</body>
+</html>

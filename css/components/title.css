@@ -1,0 +1,10 @@
+.title {
+  padding-left: 24px;
+  padding-right: 24px;
+  margin-bottom: 24px;
+
+  font-family: gothamrounded;
+  text-align: center;
+  font-size: 2rem;
+  line-height: 4.8rem;
+}

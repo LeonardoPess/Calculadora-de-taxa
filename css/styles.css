@@ -1,0 +1,6 @@
+@import './base/fonts/fonts.css';
+@import './base/resetwp.css';
+@import './geral.css';
+@import './components/form.css';
+@import './components/title.css';
+@import './components/calculadora.css';
