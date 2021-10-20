@@ -6,21 +6,21 @@ export default function initUpdateOptionsFromDebito() {
   const threeDayOptionBox = document.querySelector('#threeDayOptionBox');
 
   function handleTipoVendas({ target }) {
-    if (target.textContent == "Débito") {
+    if (target.textContent === 'Débito') {
       parcelamento.classList.add('hide');
       twoDayOptionBox.classList.add('hide');
       threeDayOptionBox.classList.add('hide');
       oneDayOption.checked = true;
     }
 
-    if (target.textContent == "Crédito") {
+    if (target.textContent === 'Crédito') {
       parcelamento.classList.remove('hide');
       twoDayOptionBox.classList.remove('hide');
       threeDayOptionBox.classList.remove('hide');
     }
   }
 
-  tipoVendas.forEach(tipoVenda => {
+  tipoVendas.forEach((tipoVenda) => {
     tipoVenda.addEventListener('click', handleTipoVendas);
   });
 }

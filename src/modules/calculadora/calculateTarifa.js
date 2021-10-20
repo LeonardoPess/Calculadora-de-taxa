@@ -1,3 +1,6 @@
+import clearMoneyValue from '../util/clearMoneyValue.js';
+import formatPrice from '../util/format.js';
+
 export default function initCalculateTarifa() {
   const plans = document.querySelectorAll('[data-plano]');
   const calculadora = document.querySelector('.conversor-wrapper');
@@ -10,28 +13,27 @@ export default function initCalculateTarifa() {
   let tarifa;
 
   function insertTarifaOnHTML() {
-    const tarifaValueFormated = tarifa.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
-
-    tarifaResultBox.innerHTML = tarifaValueFormated;
-    return;
+    tarifaResultBox.innerHTML = formatPrice(tarifa);
   }
 
   function calculate() {
-    const taxaResultBoxValue = taxaResultBox.innerText.replace('%', '');
-    let sellValue = inputSellValue.value;
-    let sellValueClean = Number(sellValue.replace(/\./g, '').replace(',', '.').replace('R$ ', '')).toFixed(2);
+    const taxaResultBoxValue = Number(taxaResultBox.innerText.replace('%', ''));
+    const sellValueClean = clearMoneyValue(inputSellValue.value);
 
     tarifa = ((sellValueClean / 100) * taxaResultBoxValue);
     insertTarifaOnHTML();
   }
 
-  [parcelamento, bandeira].forEach(element => {
+  [parcelamento, bandeira].forEach((element) => {
     element.addEventListener('change', calculate);
   });
 
-  inputSellValue.addEventListener("keyup", calculate);
-  calculadora.addEventListener("click", calculate);
-  calculadora.addEventListener('touchstart', calculate);
+  plans.forEach((plan) => {
+    plan.addEventListener('click', calculate);
+  });
 
+  inputSellValue.addEventListener('keyup', calculate);
+  calculadora.addEventListener('click', calculate);
+  calculadora.addEventListener('touchstart', calculate);
   calculate();
 }

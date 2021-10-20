@@ -1,8 +1,7 @@
 export default class ToggleSelected {
-
   constructor(list) {
     this.list = document.querySelectorAll(list);
-  
+
     this.handleClick = this.handleClick.bind(this);
   }
 
