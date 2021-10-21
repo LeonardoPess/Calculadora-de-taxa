@@ -21,7 +21,7 @@ export default function initCalculateTaxa() {
   let taxa;
 
   function insertTaxaOnHTML() {
-    taxaResultBox.innerHTML = `${Number(taxa).toFixed(2)} %`;
+    taxaResultBox.innerHTML = `${Number(taxa).toFixed(2)}%`;
   }
 
   function updateTaxaByDayOption(index, basico) {
