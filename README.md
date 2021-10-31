@@ -11,7 +11,7 @@
       <img alt="Leonardo Pessoa" src="https://img.shields.io/badge/-Leonardo Pessoa-4e5acf?style=flat&logo=Linkedin&logoColor=white" />
    </a>
   
-  <a href="https://github.com/csorlandi">
+  <a href="https://github.com/LeonardoPess">
     <img alt="Made by Leonardo Pessoa" src="https://img.shields.io/badge/made%20by-Leonardo%20Pessoa-5965e0">
   </a>
 
